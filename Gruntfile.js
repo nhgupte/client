@@ -441,7 +441,7 @@ module.exports = function(grunt) {
 			});
 
 	grunt.loadNpmTasks('grunt-connect-proxy'); 
-	
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.registerTask('serve', 'Compile then start a connect web server',
 			function(target) {
 				if (target === 'dist') {
@@ -473,5 +473,5 @@ module.exports = function(grunt) {
 			'usemin', 'htmlmin' ]);
 
 	grunt.registerTask('default', [ 'newer:jshint', 'newer:jscs', 'test',
-			'build' ]);
+			'build', 'uglify' ]);
 };
